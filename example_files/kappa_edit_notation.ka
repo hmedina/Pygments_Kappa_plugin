@@ -1,0 +1,6 @@
+Bob(site[./1]), Mary(site[./1]) @ on_rate {uni_rate}
+Bob(site[1/.]), Mary(site[1/.]) @ off_rate
+
+Anne(site{one/two}) @ 'rate'
+
+Greg(count{=5/+=4}) @ rate / rate_other
