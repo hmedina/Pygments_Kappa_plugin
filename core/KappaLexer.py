@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 
 from pygments.lexer import RegexLexer, bygroups, words
-from KappaToken import *
+from core.KappaToken import *
 
 
 class KappaLexer(RegexLexer):

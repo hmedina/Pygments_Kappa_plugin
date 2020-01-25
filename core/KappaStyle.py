@@ -1,8 +1,8 @@
 #! /usr/bin/env python3
 
 from pygments.style import Style
-from pygments.token import Comment, Number, String, Operator
-from KappaToken import *
+from pygments.token import Operator
+from core.KappaToken import *
 
 """Kappa has a lot of idiosyncratic components; a lot of those have a Pygments-token associated to them.
 Refer to those defined in KappaToken.py for documentation and hierarchy."""
