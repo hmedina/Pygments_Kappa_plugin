@@ -52,14 +52,17 @@ The token inheritance behavior allows one to define a style for the various comp
 
 #### `kappa_style_browser`
 Mimics the style used in the [GUI](https://tools.kappalanguage.org/try/?model=https%3A//raw.githubusercontent.com/Kappa-Dev/KaSim/master/models/abc-pert.ka), the only addition is the proper handling of counter syntax in agent declarations.
+
 ![kappa_style_browser](./example_files/kappa_edit_notation_style_browser.png)
 
 #### `kappa_style_edit`
 Agent names in rules will be bolded, edit operations will have a colored background according to their type: bond changes in green, state changes in blue, counter changes in orange, agent abundance changes in red.
+
 ![kappa_style_edit](./example_files/kappa_edit_notation_style_edit.png)
 
 #### `kappa_style_demo`
 Showcases some nuances the lexer is capable of, like bolding the agent name that types a bond, or only underlining edit operations ignoring bond typing constraints.
+
 ![kappa_style_demo](./example_files/kappa_edit_notation_style_demo.png)
 
 
