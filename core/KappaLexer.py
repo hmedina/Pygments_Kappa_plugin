@@ -47,8 +47,8 @@ class KappaLexer(RegexLexer):
             (r'"[^"]+"', Pert_FileName),
             (r"([_~][a-zA-Z0-9~+_]+|[a-zA-Z][a-zA-Z0-9_~+-]*)|('[^']*')", String),
             # numbers
-            (integer, Number),
             (real, Number),
+            (integer, Number),
             # rule decorations & markers
             (r'@|<->|->|{|}|:', Rule_Decor),
             (r',', Rule_Decor),
