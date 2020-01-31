@@ -11,7 +11,7 @@ setup(
     url='https://github.com/hmedina/Pygments_Kappa_plugin',
     author='Hector Medina',
     author_email='hector.f.medina.a@gmail.com',
-    install_requires=['Pygments>=2.5.2'],
+    install_requires=['Pygments>=2.5.1'],
     entry_points="""
         [pygments.lexers]
         kappa_lexer = core.KappaLexer:KappaLexer
