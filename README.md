@@ -24,7 +24,7 @@ Once installed, the entire Pygments stack will be aware of the new lexer and sty
 
 ``pygmentize -f html -O style=kappa_style_edit,full -o foo.html foo.ka``
 
-As the lexer declares `.ka` as the extension for kappa files, it doesn't have to be specified so long as the input file has that extension. The Pygments-provided formatters to `LaTeX` and various image formats are supported. However, the image formatters (i.e. `png`, `bmp`, `jpg`) has poor support for coloring text background (see [PR 1374](https://github.com/pygments/pygments/pull/1374)), so for the `kappa_style_edit` the `LaTeX` and `HTML` formatters are recommended instead.
+As the lexer declares `.ka` as the extension for kappa files, it doesn't have to be specified so long as the input file has that extension. The Pygments-provided formatters to `LaTeX` and various image formats are supported. However, the image formatters (i.e. `png`, `bmp`, `jpg`) has poor support for coloring text background (see [PR 1374](https://github.com/pygments/pygments/pull/1374)) or underlining, so for the advanced styling power the `LaTeX` and `HTML` formatters are recommended instead.
 
 
 ## Contents
@@ -59,7 +59,7 @@ Agent names in rules will be bolded, edit operations will have a colored backgro
 ![kappa_style_edit](./example_files/kappa_edit_notation_style_edit.png)
 
 #### `kappa_style_demo`
-Showcases some nuances the lexer is capable of, like bolding the agent name that types a bond.
+Showcases some nuances the lexer is capable of, like bolding the agent name that types a bond, or only underlining edit operations ignoring bond typing constraints.
 ![kappa_style_demo](./example_files/kappa_edit_notation_style_demo.png)
 
 
