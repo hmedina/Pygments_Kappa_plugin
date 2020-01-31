@@ -37,10 +37,10 @@ A() -> . | 1 Bob @ 1
 
 %var: 'on_rate' 1.0E-3
 %var: 'off_rate' 0.1
-%var: 'mod_rate' 1
+%var: 'mod_rate' 1E3
 %obs: 'AB' |A(x[~x.~B])|
 %obs: 'Cuu' |_C(_1{u},x2{~a})|
-%var: 'n_ab' 1000 * [tan] 3
+%var: 'n_ab' 1000 * [tan] 3e1
 %obs: 'n_c' 0
 %var: 'C' |_C()|
 %init: 'n_ab' A(),~B()
