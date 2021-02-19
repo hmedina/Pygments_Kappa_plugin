@@ -58,6 +58,7 @@ class KaSimInBrowserStyle(Style):
         Pert_Constructs: '#708',
     }
 
+
 class EditNotationDeltasStyle(Style):
     """This style highlights edit notation operations."""
     default_style = ''
@@ -70,4 +71,21 @@ class EditNotationDeltasStyle(Style):
         Site_Count_Oper: 'bg:#f2d6c9',
         Rule_Decor: '#cc0000',
         Comment: 'bg:#b3b3b3'
+    }
+
+
+class EditNotationDeltasStyleDark(Style):
+    """An edit notation style sheet for dark backgrounds."""
+    default_style = ''
+    background_color = '#000'
+    styles = {
+        Token.Kappa: '#eee',
+        String: '#aaa italic',
+        Agent_Name: 'bold',
+        Site_Bond_Oper: '#fff bg:#0e750e',
+        Site_Int_Oper: '#fff bg:#0e0e75',
+        Site_Count_Oper: '#fff bg:#0e0e75',
+        Agent_Oper: '#fff bg:#750e0e',
+        Rule_Decor: '#a31414',
+        Comment: 'bg:#666'
     }
