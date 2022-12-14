@@ -6,9 +6,7 @@ A plugin for the [Pygments package](https://pygments.org/) adding lexing and sty
 ![kappa_style_edit](./example_files/kappa_edit_notation_style_edit.png)
 
 ### Installation
-The plugin uses `setuptools` "entry points" to extend the lexers and styles known to Pygments. It thus works on a stock Pygments installation. To install, optionally to the `user` directory, either of these should work:
-
-`./setup.py install [--user]`
+The plugin uses `setuptools` "entry points" to extend the lexers and styles known to Pygments. It thus works on a stock Pygments installation.
 
 `pip install . [--user]`
 
@@ -59,6 +57,11 @@ Mimics the style used in the [GUI](https://tools.kappalanguage.org/try/?model=ht
 Agent names in rules will be bolded, edit operations will have a colored background according to their type: bond changes in green, state changes in blue, counter changes in orange, agent abundance changes in red.
 
 ![kappa_style_edit](./example_files/kappa_edit_notation_style_edit.png)
+
+#### `kappa_style_edit_dark`
+Dark twin of the above. Agent names in rules will be bolded, edit operations will have a colored background according to their type: bond changes in green, state changes in blue, counter changes in orange, agent abundance changes in red.
+
+![kappa_style_edit_dark](./example_files/kappa_edit_notation_style_edit_dark.png)
 
 #### `kappa_style_demo`
 Showcases some nuances the lexer is capable of, like bolding the agent name that types a bond, or only underlining edit operations ignoring bond typing constraints.
