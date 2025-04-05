@@ -4,7 +4,7 @@
 
 [project]
 name = "Pygments_Kappa_plugin"
-version = "0.3"
+version = "0.4"
 description =  "Plugin for Pygments to highlight Kappa."
 readme = "README.md"
 requires-python = ">=3.7"
@@ -29,12 +29,15 @@ dependencies = [
 
 [project.entry-points."pygments.lexers"]
     kappa_lexer = "core.KappaLexer:KappaLexer"
+    katie_lexer = "core.KaTieLexer:KaTieLexer"
 
 [project.entry-points."pygments.styles"]
     kappa_style_demo = "core.KappaStyle:DemoStyle"
     kappa_style_browser = "core.KappaStyle:KaSimInBrowserStyle"
     kappa_style_edit = "core.KappaStyle:EditNotationDeltasStyle"
     kappa_style_edit_dark = "core.KappaStyle:EditNotationDeltasStyleDark"
+    katie_style_deltas = "core.KaTieStyle:KaTieStyleDeltas"
+    katie_style_deltas_dark = "core.KaTieStyle:KaTieStyleDeltasDark"
 
 [tool.setuptools]
     packages = ["core"]
