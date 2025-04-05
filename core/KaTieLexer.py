@@ -16,7 +16,11 @@ class KaTieLexer(RegexLexer):
 
     tokens = {
         'root': [
-            # top level KaTIE keyword
+            # comments
+            (r'//.*?$', Comment.Singleline),
+            (r'/\*', Comment.Multiline, 'comment'),
+            # top level KaTIE keywords
+            (r"(query)(\s*)(')([^']+)(')", bygroups(Pert_Keyword, Whitespace, String, String, String)),
             (r'match', Pert_Keyword, 'clause'),
         ],
         'clause': [
@@ -51,12 +55,12 @@ class KaTieLexer(RegexLexer):
             (r'(agent_id)({)' + ident + r'(})', bygroups(Pert_Oper, Pert_Decor, Match_Agent_Label, Pert_Decor), '#pop'),
             (r"(count)({)(')" + ident + r"(')(}{)", bygroups(Pert_Oper, Pert_Decor, String, String, String, Pert_Decor), 'mixture_component'),
             (r'(size)({)', bygroups(Pert_Oper, Pert_Decor), 'mixture_component'),
-            (r'(int_state)(\[)(.)?' + ident + r'(.)?(\]{)' + ident + r'(.)' + ident + r'(})(\s*)(})', bygroups(Pert_Oper, Pert_Decor, Pert_Decor, Match_Event_Label, Pert_Decor, Pert_Decor, Agent_Name, Agent_Sign_Decor, Site_Name, Pert_Decor, Whitespace, Pert_Decor), '#pop'),
-            (r'(print_cc)(\[)(.)?' + ident + r'(.)?(\]{)' + ident + r'(})(\s*)(})', bygroups(Pert_Oper, Pert_Decor, Pert_Decor, Match_Event_Label, Pert_Decor, Pert_Decor, Match_Agent_Label, Pert_Decor, Whitespace, Pert_Decor), '#pop'),
-            (r'(snapshot)(\[)(.)?' + ident + r'(.)?(\])', bygroups(Pert_Oper, Pert_Decor, Match_Event_Label, Pert_Decor, Pert_Decor), '#pop'),
+            (r'(int_state)(\[)(\.)?' + ident + r'(\.)?(\]{)' + ident + r'(.)' + ident + r'(})(\s*)(})', bygroups(Pert_Oper, Pert_Decor, Pert_Decor, Match_Event_Label, Pert_Decor, Pert_Decor, Agent_Name, Agent_Sign_Decor, Site_Name, Pert_Decor, Whitespace, Pert_Decor), '#pop'),
+            (r'(print_cc)(\[)(\.)?' + ident + r'(\.)?(\]{)' + ident + r'(})(\s*)(})', bygroups(Pert_Oper, Pert_Decor, Pert_Decor, Match_Event_Label, Pert_Decor, Pert_Decor, Match_Agent_Label, Pert_Decor, Whitespace, Pert_Decor), '#pop'),
+            (r'(snapshot)(\[)(\.)?' + ident + r'(\.)?(\])', bygroups(Pert_Oper, Pert_Decor, Match_Event_Label, Pert_Decor, Pert_Decor), '#pop'),
         ],
         'mixture_component': [
-            (r'(component)(\[)(.)?' + ident + r'(.)?(\]{)' + ident + r'(})(\s*)(})', bygroups(Pert_Oper, Pert_Decor, Pert_Decor, Match_Event_Label, Pert_Decor, Pert_Decor, Match_Agent_Label, Pert_Decor, Whitespace, Pert_Decor), '#pop:2'),
+            (r'(component)(\[)(\.)?' + ident + r'(\.)?(\]{)' + ident + r'(})(\s*)(})', bygroups(Pert_Oper, Pert_Decor, Pert_Decor, Match_Event_Label, Pert_Decor, Pert_Decor, Match_Agent_Label, Pert_Decor, Whitespace, Pert_Decor), '#pop:2'),
         ],
         # reusing these from the Kappa Lexer
         'comment': comment_components,
