@@ -12,6 +12,7 @@ spanning multiple lines ***/
 '99' A(x[.]),~B(~x[.]) -> A(x[1]),~B(~x[1]) @ 'on_rate' * [tan] 3
 
 A(x[1/.]),~B(~x[1/.]) @ 'off_rate'
+A(x[~x.~B/.]) @ 4.0e-2
 
 A(x[_],c[.]),_C(_1{u}[.]) -> A(x[_],c[2]),_C(_1{u}[2])
        @ 'on_rate'
@@ -22,11 +23,9 @@ _C(_1{u/p}) @ 'mod_rate'
 'a.c' A(x[.],c[.]),_C(_1{p}[.],x2[.]{~a}) ->
       A(x[.],c[1]),_C(_1{p}[.],x2[1]{~a}) @ 'on_rate'
 
-A(x[.],c[1]),_C(_1{p},x2{~a}[1]) ->
-         A(x[.],c[.]),_C(_1{p},x2{_p}[.]) @ 'mod_rate'
+A(x[.],c[1]),_C(_1{p},x2{~a}[1]) ->A(x[.],c[.]),_C(_1{p},x2{_p}[.])@'mod_rate'
 
 ~9()+ @ 1.0 {'mod_rate'}
-
 ~9()- @ .1 { 'mod_rate' * 'on_rate' }
 
 ~9(c{=1}) -> ~9(c{+=1}) @ 'on_rate' * 'off_rate' / 'mod_rate' {1.0}
@@ -51,6 +50,7 @@ A() -> . | 1 Bob @ 1
 %mod: alarm 10.0 do $ADD 10^2 * |~9()| _C();
 %mod: [T] > 50 do $SNAPSHOT "my_snap.ka";
 %mod: [E] > 1 do $STOP ;
+
 /* open1 /* open2 close 2*/
 close */
 /* bla blaa */

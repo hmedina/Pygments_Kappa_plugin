@@ -3,7 +3,7 @@
 ## About
 A plugin for the [Pygments package](https://pygments.org/) adding lexing and styling support for the [Kappa language](https://kappalanguage.org/).
 
-![kappa_style_edit](./example_files/kappa_edit_notation_style_edit.png)
+![kappa_style_edit](./img/kappa_edit_notation_style_edit.png)
 
 ### Installation
 The plugin uses `setuptools` "entry points" to extend the lexers and styles known to Pygments. It thus works on a stock Pygments installation.
@@ -51,22 +51,22 @@ The token inheritance behavior allows one to define a style for the various comp
 #### `kappa_style_browser`
 Mimics the style used in the [GUI](https://tools.kappalanguage.org/try/?model=https%3A//raw.githubusercontent.com/Kappa-Dev/KaSim/master/models/abc-pert.ka), the only addition is the proper handling of counter syntax in agent declarations.
 
-![kappa_style_browser](./example_files/kappa_edit_notation_style_browser.png)
+![kappa_style_browser](./img/kappa_edit_notation_style_browser.png)
 
 #### `kappa_style_edit`
-Agent names in rules will be bolded, edit operations will have a colored background according to their type: bond changes in green, state changes in blue, counter changes in orange, agent abundance changes in red.
+Agent names in will be bolded, edit operations will have a colored background according to their type: bond changes in green, state changes in blue, counter changes in orange, agent abundance changes in red.
 
-![kappa_style_edit](./example_files/kappa_edit_notation_style_edit.png)
+![kappa_style_edit](./img/kappa_edit_notation_style_edit.png)
 
 #### `kappa_style_edit_dark`
-Dark twin of the above. Agent names in rules will be bolded, edit operations will have a colored background according to their type: bond changes in green, state changes in blue, counter changes in orange, agent abundance changes in red.
+Dark twin of the above. Agent names in will be bolded, edit operations will have a colored background according to their type: bond changes in green, state changes in blue, counter changes in orange, agent abundance changes in red.
 
-![kappa_style_edit_dark](./example_files/kappa_edit_notation_style_edit_dark.png)
+![kappa_style_edit_dark](./img/kappa_edit_notation_style_edit_dark.png)
 
 #### `kappa_style_demo`
-Showcases some nuances the lexer is capable of, like bolding the agent name that types a bond, or only underlining edit operations ignoring bond typing constraints.
+Showcases some nuances the lexer is capable of, e.g. bolding the agent name when it types a bond and is not part of an edit operation, only underlining edit operations ignoring bond typing constraints, coloring the contact map in the agent declaration differently than bond specification in rules.
 
-![kappa_style_demo](./example_files/kappa_edit_notation_style_demo.png)
+![kappa_style_demo](./img/kappa_edit_notation_style_demo.png)
 
 
 #### Creating custom styles

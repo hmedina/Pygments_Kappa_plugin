@@ -6,13 +6,26 @@ from core.KappaLexer import ka_identifier, agent_rule_components, agent_declarat
 from core.KaTieToken import *
 
 
+ident = r'(' + ka_identifier + r')'
+
+# KaTIE supports a broader syntax than KaSim, so the lexer's matching capacity has to be expanded
+# e.g. these are nonsence for KaSim, but are valid in KaTIE: 
+#   bCat(iARM[CBD.Axin/_])      a bond swap: bCat remains bound at this site, just to something else besides Axin
+#   bCat(iARM[./CBD.Axin])      anonymous binding: bCat has bound an Axin, but we don't care which, only caring about the bond type 
+katie_rule_expansions = [
+    (r'(\[\s*)' + ident + r'(\.)' + ident + r'(\s*/\s*)(_)(\s*\])',     # [site.Agent/_]
+        bygroups(Site_Bond_Oper_Decor, Site_Bond_Oper_State_Site, Site_Bond_Oper_Decor, Site_Bond_Oper_State_Agent, Site_Bond_Oper_Decor, Site_Bond_Oper_State, Site_Bond_Oper_Decor)),
+    (r'(\[\s*)(\.)(\s*/\s*)' + ident + r'(\.)' + ident + r'(\s*\])',    # [./site.Agent]
+        bygroups(Site_Bond_Oper_Decor, Site_Bond_Oper_State, Site_Bond_Oper_Decor, Site_Bond_Oper_State_Site, Site_Bond_Oper_Decor, Site_Bond_Oper_State_Agent, Site_Bond_Oper_Decor)),
+]
+agent_rule_components[6:6] = katie_rule_expansions  # insert list at 6th index, just after KaSim's "[site.Agent/.]" block
+
+
 class KaTieLexer(RegexLexer):
     """Pygments lexer for the Kappa Trace inquiry engine (https://github.com/jonathan-laurent/KaTie)"""
     name = 'KaTie'
     aliases = ['katie', 'KaTIE']
     filenames = ['*.katie']
-
-    ident = r'(' + ka_identifier + r')'
 
     tokens = {
         'root': [

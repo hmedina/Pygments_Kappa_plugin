@@ -19,27 +19,27 @@ agent_rule_components = [
     # end of expression, agent edit operation
     (r'(\))([+-]?)', bygroups(Agent_Decor, Agent_Oper), '#pop'),
     # bond states
-    (r'(\[\s*)(\d+|_|#|\.)(\s*\])',                                          # [99]
+    (r'(\[\s*)(\d+|_|#|\.)(\s*\])',                                                             # [99]
         bygroups(Site_Bond_Decor, Site_Bond_State, Site_Bond_Decor)),
-    (r'(\[\s*)(' + ka_identifier + r')(.)(' + ka_identifier + r')(\s*\])',                     # [site.Agent]
+    (r'(\[\s*)(' + ka_identifier + r')(.)(' + ka_identifier + r')(\s*\])',                      # [site.Agent]
         bygroups(Site_Bond_Decor, Site_Bond_State_Site, Site_Bond_Decor, Site_Bond_State_Agent, Site_Bond_Decor)),
-    (r'(\[\s*)(\d+|_|#|\.)(\s*/\s*)(\d+|\.)(\s*\])',                         # [99/56]
+    (r'(\[\s*)(\d+|_|#|\.)(\s*/\s*)(\d+|\.)(\s*\])',                                            # [99/56]
         bygroups(Site_Bond_Oper_Decor, Site_Bond_Oper_State, Site_Bond_Oper_Decor, Site_Bond_Oper_State, Site_Bond_Oper_Decor)),
-    (r'(\[\s*)(' + ka_identifier + r')(.)(' + ka_identifier + r')(\s*/\s*)(\d+|\.)(\s*\])',    # [site.Agent/.]
+    (r'(\[\s*)(' + ka_identifier + r')(\.)(' + ka_identifier + r')(\s*/\s*)(\d+|\.)(\s*\])',    # [site.Agent/.]
         bygroups(Site_Bond_Oper_Decor, Site_Bond_Oper_State_Site, Site_Bond_Oper_Decor, Site_Bond_Oper_State_Agent, Site_Bond_Oper_Decor, Site_Bond_Oper_State, Site_Bond_Oper_Decor)),
         # internal states
-    (r'({\s*)(' + ka_identifier + r'|#)(\s*})',                                       # {ph}
+    (r'({\s*)(' + ka_identifier + r'|#)(\s*})',                                                 # {ph}
         bygroups(Site_Int_Decor, Site_Int_State, Site_Int_Decor)),
-    (r'({\s*)(' + ka_identifier + r'|#)(\s*/\s*)(' + ka_identifier + r')(\s*})',               # {ph/un}
+    (r'({\s*)(' + ka_identifier + r'|#)(\s*/\s*)(' + ka_identifier + r')(\s*})',                # {ph/un}
         bygroups(Site_Int_Oper_Decor, Site_Int_Oper_State, Site_Int_Oper_Decor, Site_Int_Oper_State, Site_Int_Oper_Decor)),
     # counter states
-    (r'({\s*(?:>=|>|=)\s*)(\d+)(\s*})',                                     # {>55}
+    (r'({\s*(?:>=|>|=)\s*)(\d+)(\s*})',                                                         # {>55}
         bygroups(Site_Count_Decor, Site_Count_State, Site_Count_Decor)),
-    (r'({\s*=\s*)(' + ka_identifier + r')(\s*})',                                    # {=x}
+    (r'({\s*=\s*)(' + ka_identifier + r')(\s*})',                                               # {=x}
         bygroups(Site_Count_Decor, Site_Count_State, Site_Count_Decor)),
-    (r'({\s*[-+]=\s*)(-?\d+)(\s*})',                                        # {+= -55}
+    (r'({\s*[-+]=\s*)(-?\d+)(\s*})',                                                            # {+= -55}
         bygroups(Site_Count_Oper_Decor, Site_Count_Oper_State, Site_Count_Oper_Decor)),
-    (r'({\s*=\s*)(\d+)(\s*/\s*[+-]=\s*)(-?\d+)(\s*})',                      # {= 55 / += -3}
+    (r'({\s*=\s*)(\d+)(\s*/\s*[+-]=\s*)(-?\d+)(\s*})',                                          # {= 55 / += -3}
         bygroups(Site_Count_Oper_Decor, Site_Count_Oper_State, Site_Count_Oper_Decor, Site_Count_Oper_State, Site_Count_Oper_Decor)),
     # rest of components
     (r'\s', Agent_Sign),

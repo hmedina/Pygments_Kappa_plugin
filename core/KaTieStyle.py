@@ -11,6 +11,8 @@ class KaTieStyleDeltas(Style):
     styles = {
         String: '#808080 italic',
         Agent_Name: 'bold',
+        Site_Bond_State_Agent: 'bold',
+        Site_Bond_Oper_State_Agent: 'bold',
         Site_Bond_Oper: 'bg:#c9f2d6',
         Site_Int_Oper: 'bg:#c9e4f2',
         Agent_Oper: 'bg:#f2c9e4',
@@ -30,6 +32,8 @@ class KaTieStyleDeltasDark(Style):
         Token.Kappa: '#eee',
         String: '#aaa italic',
         Agent_Name: 'bold',
+        Site_Bond_State_Agent: 'bold',
+        Site_Bond_Oper_State_Agent: 'bold',
         Site_Bond_Oper: '#fff bg:#0e750e',
         Site_Int_Oper: '#fff bg:#0e0e75',
         Site_Count_Oper: '#fff bg:#0e0e75',
