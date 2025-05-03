@@ -69,8 +69,8 @@ class EditNotationDeltasStyle(Style):
         Site_Bond_Oper_State_Agent: 'bold',
         Site_Bond_Oper: 'bg:#c9f2d6',
         Site_Int_Oper: 'bg:#c9e4f2',
-        Agent_Oper: 'bg:#f2c9e4',
         Site_Count_Oper: 'bg:#f2d6c9',
+        Agent_Oper: 'bg:#f2c9e4',
         Rule_Decor: '#cc0000',
         Comment: 'bg:#b3b3b3'
     }
