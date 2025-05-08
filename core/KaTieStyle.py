@@ -5,8 +5,14 @@ from core.KappaToken import *
 from core.KaTieToken import *
 from core.KappaStyle import *
 
+
+__all__ = ['KaTieStyleDeltas', 'KaTieStyleDeltasDark']
+
+
 class KaTieStyleDeltas(Style):
     """Inspired by the Deltas style for Kappa's edit notation, extended to distinguish KaTie's various labels."""
+    name = 'katie_style_deltas'
+
     default_style = ''
     styles = {
         String: '#808080 italic',
@@ -26,6 +32,8 @@ class KaTieStyleDeltas(Style):
 
 class KaTieStyleDeltasDark(Style):
     """Related to KaTie's Deltas style, but adapted for dark backgrounds."""
+    name = 'katie_style_deltas_dark'
+
     default_style = ''
     background_color = '#000'
     styles = {

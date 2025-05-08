@@ -4,11 +4,14 @@ from pygments.style import Style
 from pygments.token import Operator
 from core.KappaToken import *
 
-"""Kappa has a lot of idiosyncratic components; a lot of those have a Pygments-token associated to them.
-Refer to those defined in KappaToken.py for documentation and hierarchy."""
+
+__all__ = ['DemoStyle', 'KaSimInBrowserStyle', 'EditNotationDeltasStyle', 'EditNotationDeltasStyleDark']
+
 
 class DemoStyle(Style):
     """This style showcases some of the subtleties in the lexer."""
+    name = 'kappa_style_demo'
+
     default_style = ''
     styles = {
         Agent_Name: 'bold',
@@ -40,6 +43,8 @@ class DemoStyle(Style):
 
 class KaSimInBrowserStyle(Style):
     """This style mimics the CodeMirror interface used in the GUI / KappApp."""
+    name = 'kappa_style_browser'
+
     default_style = ''
     styles = {
         Comment: '#a50',
@@ -61,6 +66,8 @@ class KaSimInBrowserStyle(Style):
 
 class EditNotationDeltasStyle(Style):
     """This style highlights edit notation operations."""
+    name = 'kappa_style_edit'
+
     default_style = ''
     styles = {
         String: '#808080 italic',
@@ -78,6 +85,8 @@ class EditNotationDeltasStyle(Style):
 
 class EditNotationDeltasStyleDark(Style):
     """An edit notation style sheet for dark backgrounds."""
+    name = 'kappa_style_edit_dark'
+
     default_style = ''
     background_color = '#000'
     styles = {
